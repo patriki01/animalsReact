@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import axios from "axios";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import UserComponent from "./components/UserComponent";
+import AnimalComponent from "./components/AnimalComponent";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import HomePage from "./components/HomePage";
 function App() {
+
+  axios.defaults.baseURL = 'https://inqool-interview-api.vercel.app/api';
+  const queryClient = new QueryClient();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage type="home"/>}/>
+          <Route path="/users" element={<HomePage type="user" children={<UserComponent/>}/>} />
+          <Route path="/animals" element={<HomePage type="animal" children={<AnimalComponent/>}/>} />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 
