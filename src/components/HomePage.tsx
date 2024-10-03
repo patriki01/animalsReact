@@ -1,5 +1,5 @@
 import React, {ReactElement} from 'react';
-import LinkButtons from "./components/LinkButtons";
+import LinkButtons from "./LinkButtons";
 import {Container} from "@mui/material";
 
 type HomeProps = {

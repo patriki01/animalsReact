@@ -2,10 +2,10 @@ import React from 'react';
 import './App.css';
 import axios from "axios";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import UserComponent from "./UserComponent";
-import AnimalComponent from "./AnimalComponent";
+import UserComponent from "./components/UserComponent";
+import AnimalComponent from "./components/AnimalComponent";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import HomePage from "./HomePage";
+import HomePage from "./components/HomePage";
 function App() {
 
   axios.defaults.baseURL = 'https://inqool-interview-api.vercel.app/api';

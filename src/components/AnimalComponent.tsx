@@ -14,12 +14,12 @@ import {
     TableRow,
     TextField,
 } from "@mui/material";
-import {Add, Clear, Edit, PlusOne} from "@mui/icons-material";
-import {Animal, EditAnimal, SimpleAnimal} from "./types";
+import {Add, Edit, PlusOne} from "@mui/icons-material";
+import {Animal, EditAnimal, SimpleAnimal} from "../types";
 import {Controller, useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {z} from "zod";
-import SearchField from "./components/SearchField";
+import SearchField from "./SearchField";
 
 const animalSchema = z.object({
     name: z.string().min(3, "Name has to be longer."),

@@ -25,11 +25,11 @@ import {
     TextField
 } from "@mui/material";
 import {Female, Male, Edit, QuestionMark, Gavel, Add} from '@mui/icons-material';
-import {EditUser, SimpleUser, User} from "./types";
+import {EditUser, SimpleUser, User} from "../types";
 import {Controller, useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {z} from "zod";
-import SearchField from "./components/SearchField";
+import SearchField from "./SearchField";
 
 const userSchema = z.object({
     name: z.string().min(3, "Name is required."),
